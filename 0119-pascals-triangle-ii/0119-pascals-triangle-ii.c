@@ -7,7 +7,6 @@ int comb(int n, int k){
     if (k == 1)
         return n;
     long double res = 1;
-    int a = k;
     while (n>k){
         res *= (long double)n/(n-k);
         --n;

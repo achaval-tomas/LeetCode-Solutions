@@ -11,7 +11,7 @@ int findKOr(int* nums, int numsSize, int k) {
         if (count == k)
             kOR += mask; 
 
-        // Shift Right mask to check the next bit.
+        // Shift Left mask to check the next bit.
         mask = mask << 1;
     }
     return kOR;

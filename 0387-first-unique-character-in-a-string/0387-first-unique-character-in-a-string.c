@@ -20,5 +20,6 @@ int firstUniqChar(char * s){
             return i;
     }
 
+    // IF LOOP DIDN'T BREAK, NOTHING WAS FOUND
     return -1;
 }

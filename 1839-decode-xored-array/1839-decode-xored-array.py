@@ -5,5 +5,4 @@ class Solution(object):
         arr.append(first)
         for i in range(1, arrlen):
             arr.append(arr[i-1] ^ encoded[i-1])
-        return arr
-        
+        return arr 

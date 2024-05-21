@@ -35,7 +35,7 @@ public:
             int sum = 0;
             for (int j = 0; j < len; ++j){
                 int k = submults[j].length() - 1 - digit; 
-                int val = k < submults[j].length() ? (submults[j][k] - 48) : 0;
+                int val = k >= 0 ? (submults[j][k] - 48) : 0;
                 sum += val;
             }
             sum += carry;

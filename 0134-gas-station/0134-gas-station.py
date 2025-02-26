@@ -8,25 +8,18 @@ class Solution(object):
         n = len(gas)
         i = 0
         checked = 0
-        while True:
-            if checked >= n:
-                return -1
-
+        while checked < n:
             tank = gas[i] - cost[i]
-            if tank < 0:
-                checked += 1
-                i = (i+1) % n
-                continue
 
-            j = i
+            j = i + 1
             while tank >= 0:
-                if j - n == i:
+                if j - n - 1 == i:
                     return i
-                j += 1
                 tank += gas[j % n] - cost[j % n]
+                j += 1
 
             checked += abs(j-i)
-            i = (j + 1) % n
+            i = j % n
 
         return -1
 

@@ -5,15 +5,15 @@ class Solution(object):
         :rtype: str
         """
         word1 = strs[0]
-        w1_len = len(word1)
+        max_len = min([len(w) for w in strs])
         wc = len(strs)
 
-        for i in range(w1_len):
+        for i in range(max_len):
             c = word1[i]
             for j in range(wc):
-                if len(strs[j]) <= i or strs[j][i] != c:
+                if strs[j][i] != c:
                     return word1[:i]
-            if i == w1_len - 1:
+            if i == max_len - 1:
                 return word1
         return ""
 

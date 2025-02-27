@@ -13,7 +13,8 @@ class Solution(object):
             for j in range(wc):
                 if len(strs[j]) <= i or strs[j][i] != c:
                     return word1[:i]
-            
+            if i == w1_len - 1:
+                return word1
         return ""
 
             

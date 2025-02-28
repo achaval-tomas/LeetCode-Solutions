@@ -5,10 +5,10 @@ class Solution(object):
         :type t: str
         :rtype: bool
         """
-        check = 0
-        for c in t:
-            if check < len(s) and c == s[check]:
+        check, limit, c, t_len = 0, len(s), 0, len(t)
+        while (check < limit and c < t_len):
+            if t[c] == s[check]:
                 check += 1
-            elif check == len(s):
-                return True
-        return check == len(s)
+            c += 1
+
+        return check == limit

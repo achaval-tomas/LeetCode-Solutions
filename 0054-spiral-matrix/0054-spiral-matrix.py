@@ -12,7 +12,7 @@ class Solution(object):
 
         direction = "right"
         r, c = 0, 0
-        added = 0
+        added = 1
         while added < m*n:
 
             if direction == "right":

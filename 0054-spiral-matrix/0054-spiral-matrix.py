@@ -12,8 +12,9 @@ class Solution(object):
 
         direction = "right"
         r, c = 0, 0
-        while len(ans) < m*n:
-            print(direction, ans)
+        added = 0
+        while added < m*n:
+
             if direction == "right":
                 r = max(0, min(r, m-1))
                 c += 1
@@ -23,6 +24,7 @@ class Solution(object):
                 else:
                     ans.append(matrix[r][c])
                     matrix[r][c] = 200
+                    added += 1
 
             elif direction == "down":
                 c = max(0, min(c, n-1))
@@ -33,6 +35,7 @@ class Solution(object):
                 else:
                     ans.append(matrix[r][c])
                     matrix[r][c] = 200
+                    added += 1
 
             elif direction == "left":
                 r = max(0, min(r, m-1))
@@ -43,6 +46,7 @@ class Solution(object):
                 else:
                     ans.append(matrix[r][c])
                     matrix[r][c] = 200
+                    added += 1
             
             elif direction == "up":
                 c = max(0, min(c, n-1))
@@ -53,5 +57,6 @@ class Solution(object):
                 else:
                     ans.append(matrix[r][c])
                     matrix[r][c] = 200
+                    added += 1
 
         return ans

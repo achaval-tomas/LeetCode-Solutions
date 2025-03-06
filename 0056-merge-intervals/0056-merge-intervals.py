@@ -5,7 +5,6 @@ class Solution(object):
         :rtype: List[List[int]]
         """
         intervals.sort()
-        print(intervals)
         n = len(intervals)
         ans = []
         i = 0

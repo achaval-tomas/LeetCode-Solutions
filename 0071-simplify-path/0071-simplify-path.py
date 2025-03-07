@@ -12,7 +12,7 @@ class Solution(object):
                 continue
             elif w == '..':
                 if valid_dirs:
-                    del valid_dirs[len(valid_dirs) - 1]
+                    valid_dirs.pop(-1)
             else:
                 valid_dirs.append(w)
         

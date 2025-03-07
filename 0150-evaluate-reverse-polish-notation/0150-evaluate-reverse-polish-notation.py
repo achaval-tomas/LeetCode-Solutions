@@ -18,7 +18,7 @@ class Solution(object):
         i = 0
         while i < n:
             num_count = 0
-            while i < n and tokens[i] not in operators:
+            while tokens[i] not in operators:
                 stack.append(int(tokens[i]))
                 i += 1
             b = stack.pop(-1)

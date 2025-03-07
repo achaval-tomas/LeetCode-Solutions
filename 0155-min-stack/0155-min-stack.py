@@ -3,9 +3,7 @@ class MinStack(object):
     def __init__(self):
         # values are pairs (value, min) where min is the minimum
         # at the moment value was added
-        self.size = 0
         self.values = []
-        self.min = 0
         
 
     def push(self, val):
@@ -13,32 +11,30 @@ class MinStack(object):
         :type val: int
         :rtype: None
         """
-        newMin = min(val, self.min) if self.size else val
-        self.min = newMin
+        newMin = min(val, self.values[-1][1]) if self.values else val
         self.values.append((val, newMin))
-        self.size += 1
 
     def pop(self):
         """
         :rtype: None
         """
-        if self.size > 0:
+        if self.values:
             self.values.pop(-1)
-            self.size -= 1
-        if self.size:
-            self.min = self.values[self.size - 1][1]
+
+        if self.values:
+            self.min = self.values[-1][1]
 
     def top(self):
         """
         :rtype: int
         """
-        return self.values[self.size - 1][0] if self.size else None
+        return self.values[-1][0] if self.values else None
 
     def getMin(self):
         """
         :rtype: int
         """
-        return self.min if self.size else None
+        return self.values[-1][1] if self.values else None
         
 
 

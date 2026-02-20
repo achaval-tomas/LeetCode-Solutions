@@ -4,18 +4,16 @@ class Solution(object):
         :type s: str
         :rtype: str
         """
+        x = list(s)
         vowels = "aeiouAEIOU"
-        vowStr = [char for char in s if char in vowels]
+        
+        ind = []
+        for i in range(len(x)):
+            if x[i] in vowels:
+                ind.append(i)
 
-        i = 0
-        v = len(vowStr) - 1
-        revStr = ""
-        for i in range(len(s)):
-            if s[i] in vowels:
-                revStr += vowStr[v]
-                v -= 1
-            else:
-                revStr += s[i]
+        for i in range(int(len(ind)/2)):
+            x[ind[i]], x[ind[-i-1]] = x[ind[-i-1]], x[ind[i]]
 
-        return revStr
+        return ''.join(x)
         
